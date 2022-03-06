@@ -1,7 +1,28 @@
-$colour-primary:#9356DC;
-$colour-secondary:#FF79DA;
+$colour-primary:#FF79DA;
+$colour-secondary: #9356DC;
 $colour-tertiary:#99E2D0;
+$color-back:#bcbcbc;
+
+$breakpoints:(
+    mobile:599px,
+    tablette:760px
+);
+
+$greyshades:(
+
+graydark:lighten($color-back,10%),
+
+ligthgray:lighten($color-back,20%),
+
+lightrose:lighten($colour-secondary,30%)
 
 
+);
 
 
+$shadow:5px 5px 5px rgb(207, 204, 204);
+$border-radius: 25px;
+
+$padding-menu:5px 0 1px 10px;
+
+$icone-size:1.4em;

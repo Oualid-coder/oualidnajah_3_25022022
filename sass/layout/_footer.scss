@@ -1,0 +1,18 @@
+footer{
+
+    color: white;
+    background: rgb(47, 46, 46);
+    height: auto;
+    padding: 10px 0 5px 30px;
+
+
+    & ul {
+
+        padding-left: 0;
+    }
+
+    & li {
+
+        padding-bottom: 5px;
+    }
+}

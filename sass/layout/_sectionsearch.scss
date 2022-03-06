@@ -1,0 +1,35 @@
+.search{
+&__paris{
+    text-align: center;
+    padding: 3% 0 3% 0;
+    @include darker;
+    margin: 0;
+& i{
+        margin-right: 15px;
+    }
+}
+& div{
+        text-align: center;
+        width: 100%;
+        padding-bottom: 3%;
+    & h2{
+        margin: 0;
+        }
+@include lighter;
+@include mobile-only{
+        padding-top: 5%;
+        padding-bottom: 10%;
+    }    
+}
+&__btn{
+    @include btn-acceuil;
+  }
+    @include mobile-only{
+        box-sizing: border-box;
+        width: 100%;
+        padding-left:2% ;
+        padding-right: 2%;
+        height: auto;       
+    }
+
+}

@@ -1,0 +1,42 @@
+@mixin mobile-only{
+
+    @media screen and (max-width: map-get($breakpoints,mobile)){
+
+        @content;
+    }
+};
+
+@mixin btn-acceuil{
+
+    background: linear-gradient(to right, $colour-primary,$colour-secondary);
+    border-radius: 25px;
+    padding: 15px;
+    color: white;
+    box-shadow: $shadow;
+    border: none;
+
+}
+
+@mixin darker { 
+
+    background: map-get($greyshades,graydark);
+}
+
+@mixin lighter {
+    background: map-get($greyshades,ligthgray);
+}
+
+@mixin lighter-rose {
+    background: map-get($greyshades, lightrose )
+    
+}
+
+@mixin box {
+
+    width: 250px;
+    height: 50px;
+    border-radius: $border-radius;
+    margin-top: 30px;
+
+
+}
