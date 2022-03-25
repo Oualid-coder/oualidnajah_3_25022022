@@ -23,6 +23,13 @@
 }
 &__btn{
     @include btn-acceuil;
+
+    &:hover{
+cursor: pointer;
+@include eclaircir;
+  
+         
+    }
   }
     @include mobile-only{
         box-sizing: border-box;

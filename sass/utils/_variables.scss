@@ -2,10 +2,15 @@ $colour-primary:#FF79DA;
 $colour-secondary: #9356DC;
 $colour-tertiary:#99E2D0;
 $color-back:#bcbcbc;
+$fuego:rgb(243, 180, 64);
+
+$anim-dur:1000ms;
+$numbox:10;
+$anim-delay: calc($anim-dur/$numbox);
 
 $breakpoints:(
     mobile:599px,
-    tablette:760px
+    tablette:992px
 );
 
 $greyshades:(
@@ -14,7 +19,9 @@ graydark:lighten($color-back,10%),
 
 ligthgray:lighten($color-back,20%),
 
-lightrose:lighten($colour-secondary,30%)
+lightrose:lighten($colour-secondary,30%),
+
+eclaircir: lighten($colour-primary,2%)
 
 
 );
@@ -26,3 +33,4 @@ $border-radius: 25px;
 $padding-menu:5px 0 1px 10px;
 
 $icone-size:1.4em;
+

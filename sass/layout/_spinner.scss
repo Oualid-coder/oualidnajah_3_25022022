@@ -1,0 +1,236 @@
+.index{
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+   
+   
+}
+
+.container{
+z-index: -1;
+position: relative;
+display: flex;
+justify-content: center;
+align-items: flex-end;
+text-align: center;
+width: 50%;
+height: 400px;
+// position: absolute;
+// top: 8%;
+// left: 30%;
+
+@media only screen and (max-width: 992px) and (min-width: 0px){
+
+   
+    
+}
+
+
+& .poivre{
+position: absolute;
+border-radius: 25px 25px 0 0;
+transform-origin:center center;
+transform: rotate(240deg);
+top: 20%;
+right: 35%;
+    width: 6%;
+    height: 100px;
+    background-color: rgb(112, 74, 74);
+    
+    
+    animation: poivre 100ms   ease both ;
+    animation-duration: 1000ms;
+
+    @media only screen and (max-width: 992px) and (min-width: 599px){
+
+        width: 30px;
+        height: 70px;
+    }
+
+    @include mobile-only{
+
+        width: 30px;
+        height: 70px;
+    }
+
+& .bouchon{
+
+    z-index: 1;
+    background-color: rgb(58, 53, 53);
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    border-radius:25px 25px 0 0 ;
+}
+}
+
+    & .spoon{
+        position: relative;
+        border-radius: 25px 25px 0 0;
+        bottom: 10%;
+        left: 10%;
+        z-index: -1;
+        transform: rotate(-30deg);
+        height: 200px;
+        width: 2%;
+        background-color: rgba(126, 94, 94, 0.938);
+        animation: spoon 3000ms  2000ms ease-in-out both ;
+
+        @media only screen and (max-width: 992px) and (min-width: 599px){
+            left: 70px;
+        }
+
+        @include mobile-only{
+
+            left: 60px;
+        }
+
+    }
+
+    & .marmite{
+        position: relative;
+        height: 150px;
+        width: 25%;
+        border-radius: 0 0 28px 28px;
+        background: linear-gradient(to right, rgb(100, 100, 104), rgb(235, 228, 229));
+        @media only screen and (max-width: 992px) and (min-width: 599px){
+            width: 150px;
+        }
+      @include mobile-only{
+
+        width: 120px;
+        
+      }
+
+& .poigne{
+    display: inline-block;
+    
+    height: 10px;
+    width:25px ;
+    background-color: rgb(31, 26, 26);
+    z-index: 1;
+
+    &--droit{
+        border-radius: 0 25px 25px 0;
+        position: absolute;
+        right:-5%;
+        top:40%
+    }
+
+    &--gauche{
+        border-radius: 25px 0 0 25px;
+        position: absolute;
+        left:-5%;
+        top:40%
+
+    }
+}
+
+.fuego{
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    height: 20px;
+    background-color: rgb(255, 145, 0);
+    border-radius: 25px 25px;
+    animation: fuego 5500ms ease ;
+}
+
+
+    }
+
+}
+
+
+
+.main-wrapper{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    background-color: white;
+    transform-origin:center top;
+    transform: scaleY(0);
+    animation: main-wrapper 500ms 5000ms ease both ;
+}
+
+@keyframes main-wrapper{
+
+    0%{
+        transform: scaleY(0);
+
+    }100%{
+        transform: scaleY(1);
+
+    }
+}
+
+@keyframes poivre{
+
+    0%{
+        transform: translateX(-20%) translateY(-30%) rotate(260deg)  ;
+    }20%{
+         transform: translateX(20%) translateY(30%)  rotate(220deg) ;
+    }40%{
+        transform: translateX(-20%) translateY(-30%) rotate(260deg) ;
+    }80%{
+         transform: translateX(20%) translateY(30%) rotate(220deg) ;
+    }100%{
+         transform: translateX(-20%) translateY(-30%) rotate(260deg);
+
+    }
+    
+
+}
+
+@keyframes spoon {
+
+    0%{
+        transform: rotate(-20deg) ;
+    }20%{
+         transform:rotate(20deg) ;
+    }40%{
+        transform: rotate(-20deg);
+    }60%{
+         transform:rotate(20deg) ;
+    }80%{
+        transform: rotate(-20deg);
+    }100%{
+         transform:rotate(20deg) ;
+
+    }
+
+
+}
+
+@keyframes fuego {
+    0%{
+transform:scaleY(.8);
+opacity:.5;
+
+    }20%{
+        transform: scaleY(1);
+        opacity:1
+    }30%{
+        transform:scaleY(.8);
+opacity:.5
+    }50%{
+        transform: scaleY(1);
+        opacity:1
+    }60%{
+        transform:scaleY(.8);
+opacity:.5
+    }80%{
+        transform: scaleY(1);
+        opacity:1
+    }90%{
+        transform:scaleY(.8);
+        opacity:.5
+    }100%{
+        transform: scaleY(1);
+        opacity:1
+    }
+}

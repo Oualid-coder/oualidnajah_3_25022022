@@ -6,6 +6,14 @@
     }
 };
 
+@mixin tab-only{
+
+    @media screen and (max-width: map-get($breakpoints,tablette)){
+
+        @content;
+    }
+};
+
 @mixin btn-acceuil{
 
     background: linear-gradient(to right, $colour-primary,$colour-secondary);
@@ -14,6 +22,7 @@
     color: white;
     box-shadow: $shadow;
     border: none;
+    
 
 }
 
@@ -30,7 +39,9 @@
     background: map-get($greyshades, lightrose )
     
 }
-
+@mixin eclaircir {
+    background:map-get($greyshades, eclaircir ) ;
+}
 @mixin box {
 
     width: 250px;

@@ -1,0 +1,16 @@
+.fa-heart{
+
+    font-size: 20px;
+    
+    
+   
+    &:hover{
+        font-weight:bold ;
+       cursor: pointer;
+        color: $colour-primary;
+        transition:  1s ease-out;
+    }
+   
+  
+   
+}

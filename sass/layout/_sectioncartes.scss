@@ -1,6 +1,51 @@
+
+.h2-invisible{
+    @media only screen and (max-width: 4096px) and (min-width: 992px){
+
+        text-align: center;
+        background-color: #efefef;
+        margin: 0;
+        padding-top: 1%
+    }
+    @media only screen and (max-width: 992px) and (min-width: 599px){
+display: none;
+
+    }
+
+    @include mobile-only{
+        display: none
+    }
+
+}
+
 .cartes{
 
     @include lighter;
+
+    @media only screen and (max-width: 4096px) and (min-width: 992px){
+
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+      &__titre-main{
+          display: none;
+      }
+
+      padding: 3% 0 3% 0;
+    }
+
+    @media only screen and (max-width:992px) and (min-width: 599px){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        
+    
+        & :first-child{
+            align-self: center;
+        }
+    }
 
    @include mobile-only{
     display: flex;
@@ -24,7 +69,16 @@
         border-radius: $border-radius;
         display: block;
         box-shadow: $shadow;
-        
+
+        @media only screen and (max-width:4096px) and (min-width: 992px){
+            width: 40%;
+            margin: 1% 1% 1% 1%;
+        }
+
+        @media only screen and (max-width:992px) and (min-width: 599px){
+            width: 70%;
+            margin: 5% 2% 3% 2%;
+        }
         @include mobile-only{
             
             width: 90%;
@@ -32,7 +86,7 @@
         }
 
         & span{
-
+            z-index: 1;
             position: absolute;
             padding: 5px 5px;
             background-color:$colour-tertiary;
@@ -84,9 +138,21 @@
         
     }
 
-    & i{
 
-        font-size: 10px;
+    & .fa-heart{
+
+        font-size: 20px;
+        
+        
+       
+        &:hover{
+            font-weight:bold ;
+           
+            color: $colour-primary;
+            transition:  1s ease-out;
+        }
+       
+      
        
     }
 
@@ -95,3 +161,6 @@
 
 
 }
+
+
+
