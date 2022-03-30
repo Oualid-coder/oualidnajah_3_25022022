@@ -362,7 +362,7 @@ p, li, button, figcaption {
   color: #9356DC;
 }
 
-@media only screen and (max-width: 4096px) and (min-width: 992px) {
+@media only screen and (max-width: 4196px) and (min-width: 992px) {
   .h2-invisible {
     text-align: center;
     background-color: #efefef;
@@ -384,7 +384,7 @@ p, li, button, figcaption {
 .cartes {
   background: #efefef;
 }
-@media only screen and (max-width: 4096px) and (min-width: 992px) {
+@media only screen and (max-width: 4196px) and (min-width: 992px) {
   .cartes {
     display: flex;
     justify-content: space-around;
@@ -429,7 +429,7 @@ p, li, button, figcaption {
   display: block;
   box-shadow: 5px 5px 5px #cfcccc;
 }
-@media only screen and (max-width: 4096px) and (min-width: 992px) {
+@media only screen and (max-width: 4196px) and (min-width: 992px) {
   .cartes a {
     width: 40%;
     margin: 1% 1% 1% 1%;
@@ -455,6 +455,12 @@ p, li, button, figcaption {
   color: green;
   left: 75%;
   top: 10%;
+}
+@media only screen and (max-width: 4196px) and (min-width: 992px) {
+  .cartes a span {
+    left: 85%;
+    top: 10%;
+  }
 }
 .cartes a img {
   height: 200px;
@@ -535,11 +541,13 @@ footer .contact {
   color: white;
 }
 
-.footer-menu {
-  margin-top: 2%;
-  position: relative;
-  bottom: 40px;
-  height: 300px;
+body {
+  min-width: 300px;
+}
+@media screen and (max-width: 599px) {
+  body {
+    background-color: #efefef;
+  }
 }
 
 header {
@@ -551,6 +559,13 @@ header {
   }
   header h1 {
     font-size: 2.8em;
+  }
+}
+@media screen and (max-width: 599px) {
+  header h1 {
+    margin: 0;
+    background-color: white;
+    padding: 4%;
   }
 }
 header a {
@@ -579,7 +594,6 @@ header i {
 }
 
 .menu {
-  z-index: 1;
   position: relative;
   bottom: 40px;
   box-sizing: border-box;
@@ -611,7 +625,6 @@ header i {
   }
 }
 .menu ul {
-  z-index: 4;
   margin: 0 0 50px 0;
   padding: 0;
   display: flex;
@@ -626,7 +639,6 @@ header i {
   margin-top: 0;
 }
 .menu .liste {
-  z-index: -1;
   width: 250px;
   height: 50px;
   border-radius: 25px;
@@ -638,13 +650,21 @@ header i {
   box-shadow: 5px 5px 5px #cfcccc;
   position: relative;
   opacity: 0;
-  z-index: 1;
-  transform-origin: center top;
-  animation: appear 1000ms 1000ms ease both;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr;
+  transform: translateY(50%);
+  animation: appear 1000ms 2000ms ease both;
 }
 @media only screen and (max-width: 4096px) and (min-width: 992px) {
   .menu .liste {
     width: 700px;
+    height: 100px;
+  }
+}
+@media only screen and (max-width: 992px) and (min-width: 599px) {
+  .menu .liste {
+    width: 500px;
     height: 100px;
   }
 }
@@ -656,15 +676,24 @@ header i {
 .menu .liste:hover {
   cursor: pointer;
 }
-.menu .liste:hover > .liste__fond-vert {
-  transform: scaleX(1);
+.menu .liste:hover > .liste__menu {
+  overflow: hidden;
+}
+.menu .liste:hover > .liste__menu > h4 {
+  overflow: hidden;
+}
+.menu .liste:hover > .liste__menu > p {
+  overflow: hidden;
+}
+.menu .liste:hover > .liste__menu + .liste__fond-vert {
+  transform: translateX(0);
   animation: validation 1000ms ease backwards;
 }
-.menu .liste:hover > .liste__fond-vert + span {
-  transform: translateX(-360%);
-  animation: argent 1000ms ease;
+.menu .liste:hover > .liste__menu + .liste__fond-vert + .liste__prix {
+  transform: translateX(-40%);
+  animation: argent 800ms ease backwards;
 }
-.menu .liste:hover > .liste__fond-vert > .liste__fond-vert--icone {
+.menu .liste:hover > .liste__menu + .liste__fond-vert > .liste__fond-vert--icone {
   animation: icone 300ms 200ms ease forwards;
 }
 .menu .liste--1 {
@@ -698,69 +727,74 @@ header i {
   animation-delay: 1000ms;
 }
 .menu .liste__menu {
-  position: absolute;
-  width: auto;
-  overflow: hidden;
-  top: 10px;
+  flex: 1;
+  order: 1;
   width: auto;
   margin-right: 1%;
   padding-right: 1%;
   margin-left: 1%;
   padding-left: 1%;
+  align-self: center;
 }
-.menu .liste h4 {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+@media only screen and (max-width: 4096px) and (min-width: 992px) {
+  .menu .liste__menu {
+    width: auto;
+  }
+}
+@media only screen and (max-width: 375px) and (min-width: 0px) {
+  .menu .liste__menu {
+    overflow: hidden;
+  }
+}
+.menu .liste__menu--titre {
   margin: 0;
   font-weight: bold;
   font-size: 1.2em;
   padding: 5px 0 1px 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-@media screen and (max-width: 599px) {
-  .menu .liste h4 {
-    align-self: flex-start;
-  }
-}
-.menu .liste p {
-  margin: 0;
-  font-size: 1em;
-  padding: 5px 0 1px 10px;
-  position: relative;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.menu .liste span {
-  position: absolute;
+@media screen and (max-width: 599px) {
+  .menu .liste__menu--titre {
+    align-self: flex-start;
+  }
+}
+.menu .liste p {
+  width: auto;
+  margin: 0;
+  font-size: 1em;
+  padding: 5px 0 1px 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu .liste__prix {
+  white-space: nowrap;
   font-weight: bold;
   margin: 1%;
-  left: 87%;
-  top: 53%;
+  margin-bottom: 15px;
   transform: translateX(0);
   transition: transform 800ms ease;
+  order: 2;
+  align-self: flex-end;
+  justify-self: end;
 }
 .menu .liste__fond-vert {
-  position: absolute;
+  order: 3;
   height: 100%;
-  width: 23%;
   background-color: #99E2D0;
   border-radius: 0 25px 25px 0;
-  right: 0;
-  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   transform-origin: right;
-  transform: scaleX(0);
+  transform: translateX(100%);
   transition: transform 800ms ease;
 }
 @media only screen and (max-width: 4096px) and (min-width: 599px) {
   .menu .liste__fond-vert {
     height: 100%;
-    width: 20%;
   }
 }
 .menu .liste__fond-vert--icone {
@@ -778,7 +812,10 @@ header i {
 }
 @media only screen and (max-width: 4096px) and (min-width: 599px) {
   .menu__plat {
+    width: auto;
     text-align: center;
+    text-decoration: 3px underline #99E2D0;
+    border-bottom: none;
   }
 }
 .menu__bouton {
@@ -808,15 +845,15 @@ header i {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(1);
+    transform: translateX(-40%);
   }
 }
 @keyframes validation {
   0% {
-    transform: scaleX(0);
+    transform: translateX(100%);
   }
   100% {
-    transform: scaleX(1);
+    transform: translateX(0);
   }
 }
 @keyframes icone {
@@ -835,23 +872,39 @@ header i {
 }
 @keyframes appear {
   0% {
-    transform: scaleY(0);
+    transform: translateY(1);
+    opacity: 0;
+  }
+  20% {
+    transform: translateY(0.9);
     opacity: 0.1;
   }
-  20%, 30% {
-    opacity: 0.2;
+  30% {
+    transform: translateY(0.8);
+    opacity: 0.1;
   }
-  50%, 70% {
+  40% {
+    transform: translateY(0.7);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translateY(0.6);
     opacity: 0.3;
   }
-  80% {
-    opacity: 0.5;
+  70% {
+    transform: translateY(0.5);
+    opacity: 0.6;
   }
-  90% {
+  80% {
+    transform: translateY(0.3);
     opacity: 0.7;
   }
+  90% {
+    transform: translateY(0.2);
+    opacity: 0.8;
+  }
   100% {
-    transform: scaleY(1);
+    transform: translateY(0);
     opacity: 1;
   }
 }

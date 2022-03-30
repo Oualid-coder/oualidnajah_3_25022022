@@ -1,6 +1,6 @@
 
 .h2-invisible{
-    @media only screen and (max-width: 4096px) and (min-width: 992px){
+    @media only screen and (max-width: 4196px) and (min-width: 992px){
 
         text-align: center;
         background-color: #efefef;
@@ -8,7 +8,7 @@
         padding-top: 1%
     }
     @media only screen and (max-width: 992px) and (min-width: 599px){
-display: none;
+    display: none;
 
     }
 
@@ -22,7 +22,7 @@ display: none;
 
     @include lighter;
 
-    @media only screen and (max-width: 4096px) and (min-width: 992px){
+    @media only screen and (max-width: 4196px) and (min-width: 992px){
 
         display: flex;
         justify-content: space-around;
@@ -70,7 +70,7 @@ display: none;
         display: block;
         box-shadow: $shadow;
 
-        @media only screen and (max-width:4096px) and (min-width: 992px){
+        @media only screen and (max-width:4196px) and (min-width: 992px){
             width: 40%;
             margin: 1% 1% 1% 1%;
         }
@@ -93,6 +93,11 @@ display: none;
             color: green;
             left: 75%;
             top:10%;
+            @media only screen and (max-width:4196px) and (min-width: 992px){
+
+                left:85%;
+                top:10%
+            }
            
 
         }
