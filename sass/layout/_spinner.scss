@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media only screen and (max-width: 4196px) and (min-width: 992px){
+    text-align: center;
+}
    
    
 }
@@ -18,9 +21,7 @@ align-items: flex-end;
 text-align: center;
 width: 50%;
 height: 400px;
-// position: absolute;
-// top: 8%;
-// left: 30%;
+
 
 @media only screen and (max-width: 992px) and (min-width: 0px){
 
@@ -147,6 +148,10 @@ right: 35%;
 
 
 .main-wrapper{
+    @media only screen and (max-width: 4196px) and (min-width: 992px){
+        width: 98%;
+    }
+   
     position: absolute;
     width: 100%;
     top: 0;

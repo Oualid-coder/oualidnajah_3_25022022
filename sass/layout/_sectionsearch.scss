@@ -1,5 +1,30 @@
+.premiere_section{
+    @media only screen and (max-width:4196px) and (min-width: 992px){
+        display: flex;
+        justify-content: center;
+        height: 250px;
+        margin-bottom: 1.5%;
+    }
+  
+}
+
+
 .search{
+
+    @media only screen and (max-width:4196px) and (min-width: 992px){
+
+        width: 100%;
+        height: 200px;
+        
+    }
+
+
 &__paris{
+
+    @media only screen and (max-width:4196px) and (min-width: 992px){
+        padding: 1% 0 1% 0;
+
+    }
     text-align: center;
     padding: 3% 0 3% 0;
     @include darker;
@@ -11,18 +36,29 @@
 & div{
         text-align: center;
         width: 100%;
-        padding-bottom: 3%;
-    & h2{
-        margin: 0;
+        // padding-bottom: 1%;
+        box-sizing: border-box;
+        @media only screen and (max-width:992px) and (min-width: 599px){
+        padding-bottom: 1%;
         }
-@include lighter;
-@include mobile-only{
+    & h2{
+        box-sizing: border-box;
+        margin: 0 0 1% 0;
+        padding: 1%;
+        }
+        @include lighter;
+        @include mobile-only{
         padding-top: 5%;
         padding-bottom: 10%;
     }    
 }
+
 &__btn{
     @include btn-acceuil;
+    @media only screen and (max-width:4196px) and (min-width: 992px){
+    padding: 1%;
+    margin: 1%;
+    }
 
     &:hover{
 cursor: pointer;

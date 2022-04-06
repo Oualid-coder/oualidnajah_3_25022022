@@ -42,12 +42,32 @@
 @mixin eclaircir {
     background:map-get($greyshades, eclaircir ) ;
 }
+
 @mixin box {
 
     width: 250px;
     height: 50px;
     border-radius: $border-radius;
     margin-top: 30px;
+    @media only screen and (max-width:4196px) and (min-width: 992px){
 
+        width: 300px;
+    }
 
+}
+
+@mixin boxDeux {
+
+    width: 250px;
+    height: 50px;
+    border-radius: $border-radius;
+    margin-top: 30px;
+    @media only screen and (max-width:4196px) and (min-width: 992px){
+
+        width: 70%;
+    }
+    @media only screen and (max-width:1988px) and (min-width: 992px){
+
+width: 90%;
+    }
 }
